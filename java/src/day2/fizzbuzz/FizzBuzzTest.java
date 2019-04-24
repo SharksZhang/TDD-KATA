@@ -1,42 +1,41 @@
-package fizzbuzz;
+package day2.fizzbuzz;
 
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FizzBuzzTest {
     @Test
-    void shouldReturnNumber(){
+    void shouldReturnNumberWhenGivenNormalNumber (){
         assertEquals(new FizzBuzz().play(1), "1");
     }
 
     @Test
-    void shouldReturnNumber2(){
+    void shouldReturnNumberWhenGivenNormalNumber2(){
         assertEquals(new FizzBuzz().play(2), "2");
     }
 
     @Test
-    void shouldReturnFizzGivenDivisibleBy3(){
+    void shouldReturnFizzWhenDivisibleBy3(){
         assertEquals(new FizzBuzz().play(3), "Fizz");
     }
 
     @Test
-    void shouldReturnBuzzGivenDivisibleBy5(){
+    void shouldReturnBuzzWhenDivisibleBy5(){
         assertEquals(new FizzBuzz().play(5), "Buzz");
     }
 
     @Test
-    void shouldReturnFizzBuzzGivenDivisibleBy3And5(){
+    void shouldReturnBuzzWhenDivisibleBy5And3(){
         assertEquals(new FizzBuzz().play(15), "FizzBuzz");
     }
-
     @Test
-    void shouldReturnFizzGivenIntContains3(){
+    void shouldReturnFizzWhenContains3(){
         assertEquals(new FizzBuzz().play(13), "Fizz");
     }
-
     @Test
-    void shoudReturnBuzzGivenIntContains5(){
-        assertEquals(new FizzBuzz().play(59), "Buzz");
+    void shouldReturnBuzzWhenContains5(){
+        assertEquals(new FizzBuzz().play(52), "Buzz");
     }
 }

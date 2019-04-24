@@ -1,4 +1,4 @@
-package fizzbuzz;
+package day1.fizzbuzz;
 
 public class FizzBuzz {
 
