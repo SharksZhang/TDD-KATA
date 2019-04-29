@@ -11,10 +11,6 @@
 
 task list
 1. - [ ] parser schema
-
-      - [ ] 
-
-      
 2. 解析 arguments
 3. 获取argument的值
 
