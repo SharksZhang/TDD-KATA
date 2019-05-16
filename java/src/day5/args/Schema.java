@@ -17,6 +17,10 @@ public class Schema {
         this.type = type;
     }
 
+    public boolean isBoolType() {
+        return type == "";
+    }
+
     void checkValid() throws SchemaWrongFormatException {
         if (this.type == "") {
 

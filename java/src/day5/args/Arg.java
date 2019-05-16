@@ -1,6 +1,5 @@
 package day5.args;
 
-import java.util.Map;
 
 public class Arg {
     Character name;
@@ -18,31 +17,27 @@ public class Arg {
         return argStr.length() == 2;
     }
 
-    void checkValid(Map<Character, String> singleSchemas) throws ArgumentNotExistInSchemaException, ArgumentNeedValueException, BooleanArgumentDoesNotNeedValueException {
-        if (!isArgInSchema(singleSchemas)) {
+    void checkValid(SchemaRepo repo) throws ArgumentNotExistInSchemaException, ArgumentNeedValueException, BooleanArgumentDoesNotNeedValueException {
+        if (!repo.isSchemaExist(name)) {
             throw new ArgumentNotExistInSchemaException("args not in schema");
         }
-        checkArgValueValid(singleSchemas);
-    }
-
-    private boolean isArgInSchema(Map<Character, String> singleSchemas) {
-        return singleSchemas.containsKey(name);
+        checkArgValueValid(repo);
     }
 
 
-    private void checkArgValueValid(Map<Character, String> singleSchemas) throws BooleanArgumentDoesNotNeedValueException, ArgumentNeedValueException {
-        if (isBooleanType(singleSchemas) && val != "") {
+
+    private void checkArgValueValid(SchemaRepo repo) throws BooleanArgumentDoesNotNeedValueException, ArgumentNeedValueException {
+
+        if (repo.get(name).isBoolType() && !val.equals("")) {
             throw new BooleanArgumentDoesNotNeedValueException();
         }
-        if (!isBooleanType(singleSchemas) && val == "" ) {
+
+        if (!repo.get(name).isBoolType() && val.equals("")  ) {
             throw new ArgumentNeedValueException();
         }
 
     }
 
-    private boolean isBooleanType(Map<Character,String> singleSchemas) {
-        return singleSchemas.get(name) == "";
-    }
 
 
 }

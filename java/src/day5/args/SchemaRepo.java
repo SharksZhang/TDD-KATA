@@ -15,4 +15,12 @@ public class SchemaRepo {
         repo.put(schema.getName(), schema);
     }
 
+    public Schema get(Character flag) {
+        return repo.get(flag);
+    }
+
+    public boolean isSchemaExist(Character flag) {
+        return repo.containsKey(flag);
+    }
+
 }

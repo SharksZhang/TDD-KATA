@@ -1,6 +1,5 @@
 package day5.args;
 
-import java.util.Map;
 
 public class ArgumentParser {
 
@@ -12,12 +11,12 @@ public class ArgumentParser {
          argsArr = args.split(ARGS_SEPARATOR);
     }
 
-     void parser(Map<Character,String> singleSchemas) throws ArgumentNotExistInSchemaException, ArgumentFormatException, BooleanArgumentDoesNotNeedValueException, ArgumentNeedValueException {
+     void parser(SchemaRepo repo) throws ArgumentNotExistInSchemaException, ArgumentFormatException, BooleanArgumentDoesNotNeedValueException, ArgumentNeedValueException {
         for (int i = 0; i< argsArr.length; i ++){
             String argStr = argsArr[i];
             String argVal = getArgValue(argsArr, i);
             if (isArgStr(argStr)) {
-                new Arg(argStr, argVal).checkValid(singleSchemas);
+                new Arg(argStr, argVal).checkValid(repo);
             }
         }
     }
