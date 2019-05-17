@@ -87,14 +87,61 @@ public class ArgsTest {
         assertThrows(ArgumentNeedValueException.class, () -> new Args("f,s*,n#,a##,p[*]", "-s "));
     }
 
+    //需要使用正则表达式,先跳过
+
     @Disabled
     void shouldThrowArgsValueTypeExceptionGivenArgsValueWrong() {
-        assertThrows(WrongArgsTypeException.class, () -> new Args("f,s*,n#,a##,p[*]", "-s @@@"));
+        assertThrows(WrongArgsValueTypeException.class, () -> new Args("f,s*,n#,a##,p[*]", "-s @@@"));
+    }
+
+    @Test
+    void shouldReturnTrueWhenGetBoolGivenTheArgBoolValue() throws ArgumentNeedValueException, SchemaWrongFormatException, BooleanArgumentDoesNotNeedValueException, ArgumentNotExistInSchemaException, ArgumentFormatException, ArgumentTypeException {
+        Args args = new Args("f,s*,n#,a##,p[*]", "-f ");
+        assertTrue(args.getBoolean('f'));
+    }
+
+    @Test
+    void shouldReturnFalseWhenGetBoolDoesNotGivenBoolValue() throws ArgumentNeedValueException, SchemaWrongFormatException, BooleanArgumentDoesNotNeedValueException, ArgumentNotExistInSchemaException, ArgumentFormatException, ArgumentTypeException {
+        Args args = new Args("f,s*,n#,a##,p[*]", "");
+        assertFalse(args.getBoolean('f'));
+    }
+
+    @Test
+    void shouldThrowArgumentNotExistInSchemaWhenGetBoolGivenArgNotInSchema() throws ArgumentNeedValueException, SchemaWrongFormatException, BooleanArgumentDoesNotNeedValueException, ArgumentNotExistInSchemaException, ArgumentFormatException {
+        Args args = new Args("f,s*,n#,a##,p[*]", "-f");
+        assertThrows(ArgumentNotExistInSchemaException.class, () ->args.getBoolean('c') );
+    }
+
+    @Test
+    void shouldThrowArgumentTypeExceptionWhenGetStringGivenArgInSchemaButTypeError() throws ArgumentNeedValueException, SchemaWrongFormatException, BooleanArgumentDoesNotNeedValueException, ArgumentNotExistInSchemaException, ArgumentFormatException {
+        Args args = new Args("f,s*,n#,a##,p[*]", "-s 5");
+        assertThrows(ArgumentTypeException.class, () ->args.getBoolean('s') );
     }
 
 
+    @Test
+    void shouldReturnTrueWhenGetStringGivenTheArgStringValue() throws ArgumentNeedValueException, SchemaWrongFormatException, BooleanArgumentDoesNotNeedValueException, ArgumentNotExistInSchemaException, ArgumentFormatException, ArgumentTypeException {
+        Args args = new Args("f,s*,n#,a##,p[*]", "-s good ");
+        assertEquals("good", args.getString('s'));
+    }
 
-
+    @Test
+    void shouldReturnFalseWhenGetStringDoesNotGivenStringValue() throws ArgumentNeedValueException, SchemaWrongFormatException, BooleanArgumentDoesNotNeedValueException, ArgumentNotExistInSchemaException, ArgumentFormatException, ArgumentTypeException {
+        Args args = new Args("f,s*,n#,a##,p[*]", "");
+        assertEquals("", args.getString('s'));
+    }
+//
+//    @Test
+//    void shouldThrowArgumentNotExistInSchemaWhenGetStringGivenArgNotInSchema() throws ArgumentNeedValueException, SchemaWrongFormatException, BooleanArgumentDoesNotNeedValueException, ArgumentNotExistInSchemaException, ArgumentFormatException {
+//        Args args = new Args("f,s*,n#,a##,p[*]", "-f");
+//        assertThrows(ArgumentNotExistInSchemaException.class, () ->args.getBoolean('c') );
+//    }
+//
+//    @Test
+//    void shouldThrowArgumentTypeExceptionWhenGetBoolGivenArgInSchemaButTypeError() throws ArgumentNeedValueException, SchemaWrongFormatException, BooleanArgumentDoesNotNeedValueException, ArgumentNotExistInSchemaException, ArgumentFormatException {
+//        Args args = new Args("f,s*,n#,a##,p[*]", "-s 5");
+//        assertThrows(ArgumentTypeException.class, () ->args.getBoolean('s') );
+//    }
 
 
 

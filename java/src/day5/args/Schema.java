@@ -21,6 +21,22 @@ public class Schema {
         return type == "";
     }
 
+    public boolean isStringType() {
+        return type.equals("*");
+    }
+
+    public boolean isIntegerType() {
+        return type.equals("#");
+    }
+
+    public boolean isDoubleType() {
+        return type.equals("##");
+    }
+
+    public boolean isStringArrayType() {
+        return type.equals("[*]");
+    }
+
     void checkValid() throws SchemaWrongFormatException {
         if (this.type == "") {
 
