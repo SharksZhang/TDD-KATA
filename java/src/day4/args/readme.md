@@ -21,11 +21,9 @@ args
 2. 子步骤也是可以拆分的，但是最好是可测试的拆分。
 3. 不暴露状态的情况下可测试
 4. 小步是为了降低输入输出的复杂度
-5. 当发现一步做不出来时，再次拆分to do list
-6. 拆分todolist 每次选取最简单的实现
+5. 当发现一步做不出来时，再次拆分更小的task list
 7. 小步修改
 
-task list  
 
     public class ArgsMain {
       public static void main(String[] args) {
@@ -56,6 +54,7 @@ task list
     Coresponding command line: "-f -s Bob -n 1 -a 3.2 -p e1 -p e2 -p e3
     
 
+task list  
 
 
 -  校验 。schema is ""
