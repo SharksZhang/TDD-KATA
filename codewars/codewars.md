@@ -14,3 +14,14 @@
 使用异或的性质可以求 唯一奇数个数和唯一偶数个数
 
 ##### java stream
+
+
+
+#### Weight for weight
+
+```
+String s ="a";
+s.chars()方法，返回Stream
+s.chars().sum()获得相加的结果
+```
+
