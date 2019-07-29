@@ -18,33 +18,33 @@ public class ArgsTest {
         assertThrows(SchemaWrongFormatException.class, () -> new Args("1111", ""));
     }
 
-    @Test
-    void shouldNotThrowExceptionWhenNewArgsGivenBooleanType() {
-        assertDoesNotThrow (() -> new Args("f", ""));
-    }
-
-    @Test
-    void shouldNotThrowExceptionWhenNewArgsGivenStringType() {
-        assertDoesNotThrow (() -> new Args("f*", ""));
-
-    }
-
-    @Test
-    void shouldNotThrowExceptionWhenNewArgsGivenIntegerType() {
-        assertDoesNotThrow (() -> new Args("f#", ""));
-
-    }
-
-    @Test
-    void shouldNotThrowExceptionWhenNewArgsGivenDoubleType() {
-        assertDoesNotThrow (() -> new Args("f##", ""));
-
-    }
-
-    @Test
-    void shouldNotThrowExceptionWhenNewArgsGivenStringArrayTypeType() {
-        assertDoesNotThrow (() -> new Args("f[*]", ""));
-    }
+//    @Test
+//    void shouldNotThrowExceptionWhenNewArgsGivenBooleanType() {
+//        assertDoesNotThrow (() -> new Args("f", ""));
+//    }
+//
+//    @Test
+//    void shouldNotThrowExceptionWhenNewArgsGivenStringType() {
+//        assertDoesNotThrow (() -> new Args("f*", ""));
+//
+//    }
+//
+//    @Test
+//    void shouldNotThrowExceptionWhenNewArgsGivenIntegerType() {
+//        assertDoesNotThrow (() -> new Args("f#", ""));
+//
+//    }
+//
+//    @Test
+//    void shouldNotThrowExceptionWhenNewArgsGivenDoubleType() {
+//        assertDoesNotThrow (() -> new Args("f##", ""));
+//
+//    }
+//
+//    @Test
+//    void shouldNotThrowExceptionWhenNewArgsGivenStringArrayTypeType() {
+//        assertDoesNotThrow (() -> new Args("f[*]", ""));
+//    }
 
     @Test
     void shouldNotThrowExceptionWhenSchemaDuplicate() {
@@ -52,10 +52,10 @@ public class ArgsTest {
         assertTrue(e.getMessage().contains("flag duplicate"));
     }
 
-    @Test
-    void shouldNotThrowExceptionWhenNewArgsGivenMultipleType() {
-        assertDoesNotThrow (() -> new Args("f,s*,n#,a##,p[*]", ""));
-    }
+//    @Test
+//    void shouldNotThrowExceptionWhenNewArgsGivenMultipleType() {
+//        assertDoesNotThrow (() -> new Args("f,s*,n#,a##,p[*]", ""));
+//    }
 
     @Test
     void shouldThrowArgumentNotExistInSchemaGivenArgsNotExistTypeBool() {
@@ -67,10 +67,10 @@ public class ArgsTest {
         assertThrows(ArgumentNotExistInSchemaException.class, () -> new Args("f,s*,n#,a##,p[*]", "-f -d"));
     }
 
-    @Test
-    void shouldThrowArgumentNotExistInSchemaGivenMultipleArgsNotExistTypeString() {
-        assertDoesNotThrow(()->new Args("f,s*,n#,a##,p[*]", "-s bb"));
-    }
+//    @Test
+//    void shouldThrowArgumentNotExistInSchemaGivenMultipleArgsNotExistTypeString() {
+//        assertDoesNotThrow(()->new Args("f,s*,n#,a##,p[*]", "-s bb"));
+//    }
 
     @Test
     void shouldThrowArgumentFormatExceptionGivenTwoDigitsArgument() {
