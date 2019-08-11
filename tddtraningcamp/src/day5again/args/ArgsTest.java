@@ -4,6 +4,7 @@ package day5again.args;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ArgsTest {
@@ -14,7 +15,7 @@ public class ArgsTest {
     @Test
     void should_throw_exception_when_get_null_flag() throws Exception {
         Args args = new Args("", "");
-        assertFalse(args.getBool(""));
+        assertThrows(Exception.class, () ->args.getBool(""));
     }
 
 
@@ -29,6 +30,18 @@ public class ArgsTest {
         Args arg = new Args("l", "-l");
         assertTrue(arg.getBool("l"));
     }
+
+	@Test
+	void should_throw_exception_when_flag_not_in_schema() throws Exception {
+		Args args = new Args("l", "-l");
+		assertThrows(Exception.class, () -> args.getBool("a"));
+	}
+
+	@Test
+	void should_throw_exception_when_flag_format_error() throws Exception {
+		Args args = new Args("l", "-l");
+		assertThrows(Exception.class, () -> args.getBool("-dsfa"));
+	}
 
 
 }

@@ -9,12 +9,21 @@ args : -g this,is,a,list -d 1,2,-3,5
 
 
 - [ ] char    - Boolean arg. ("l", args)
-  - [ ] 在args中不存在返回 默认值
-  - [ ] 在args中存在返回对应值
-  - [ ] flag 在schema中不存在
-  - [ ] argparser  
-    - [ ] 在argument中存在，返回对应值
-    - [ ] 不存在，返回默认值
+  - [x] 在schema中存在。在args中不存在返回 默认值
+  - [x] 在schema中存在。在args中存在返回对应值
+  - [x] 在schema中不存在 抛出错误
+- [ ] argparser  
+  - [x] 在argument中存在，返回对应值
+  - [x] 不存在，返回默认值
+  - [ ] argument校验
+    - [ ] 每个flag长度不对
+    - [ ] 不以 - 开始
+    - [ ] 不是字母
+- [ ] schema  
+  - [x] 校验schema格式
+  - [x] schema 判断类型
+- [ ] flag类型校验
+  - [ ] 
 - [ ] char*   - String arg.  
 - [ ] char#   - Integer arg. 
 - [ ] char##  - double arg.
