@@ -20,7 +20,23 @@ public class ArgsParser {
 	}
 
 	private void checkArguments(String arguments) throws Exception {
+//		for (String argument : arguments.split(" ")) {
+//
+//			if(argument.length() != 2){
+//				throw new Exception("arguments format Exception");
+//			}
+//
+//			if(!Character.isAlphabetic(argument.charAt(1))){
+//				throw new Exception("arguments format Exception");
+//			}
+//
+//			if(argument.charAt(0) != '-'){
+//				throw new Exception("arguments format Exception");
+//			}
+//		}
+
 		for (String argument : arguments.split(" ")) {
+
 			if(argument.length() != 2){
 				throw new Exception("arguments format Exception");
 			}
@@ -33,6 +49,7 @@ public class ArgsParser {
 				throw new Exception("arguments format Exception");
 			}
 		}
+
 	}
 
 	public boolean get(String flag) {

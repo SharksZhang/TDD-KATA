@@ -42,6 +42,25 @@ class SchemaParserTest {
 
 	}
 
+	@Test
+	void should_not_throw_exception_given_string_schema() throws Exception {
+		  assertDoesNotThrow(() -> new SchemaParser("a*"));
+
+	}
+
+	@Test
+	void should_return_true_when_is_string() throws Exception {
+		SchemaParser schemaParser = new SchemaParser("a*");
+		assertTrue(schemaParser.isString("a"));
+	}
+
+	@Test
+	void should_return_false_when_does_not_given_string() throws Exception {
+		SchemaParser schemaParser = new SchemaParser("a");
+		assertFalse(schemaParser.isString("a"));
+	}
+
+
 
 
 }

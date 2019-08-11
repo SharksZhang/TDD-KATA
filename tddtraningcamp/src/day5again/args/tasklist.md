@@ -8,23 +8,26 @@ args : -g this,is,a,list -d 1,2,-3,5
 
 
 
-- [ ] char    - Boolean arg. ("l", args)
+- [x] char    - Boolean arg. ("l", args)
   - [x] 在schema中存在。在args中不存在返回 默认值
   - [x] 在schema中存在。在args中存在返回对应值
   - [x] 在schema中不存在 抛出错误
 - [ ] argparser  
   - [x] 在argument中存在，返回对应值
   - [x] 不存在，返回默认值
-  - [ ] argument校验
-    - [ ] 每个flag长度不对
-    - [ ] 不以 - 开始
-    - [ ] 不是字母
-- [ ] schema  
+  - [x] argument校验
+    - [x] 每个flag长度不对
+    - [x] 不以 - 开始
+    - [x] 不是字母
+    - [ ] argument中值和schema中的值类型正确
+- [x] schema  
   - [x] 校验schema格式
   - [x] schema 判断类型
-- [ ] flag类型校验
-  - [ ] 
+  - [x] schema判断String类型
 - [ ] char*   - String arg.  
+  - [ ] 在schema中类型正确，在argument 中存在获取对应值,
+  - [ ] 在schema中类型正确，在argument中存在返回默认值
+  - [ ] 在schema中类型错误
 - [ ] char#   - Integer arg. 
 - [ ] char##  - double arg.
 - [ ] char[*] - one element of a string array. 

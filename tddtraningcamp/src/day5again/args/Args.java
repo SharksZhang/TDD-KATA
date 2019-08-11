@@ -14,4 +14,14 @@ public class Args {
 		}
 		return argsParser.get(flag);
 	}
+
+	public String getString(String flag) throws Exception {
+		if(!schemaParser.isString(flag)){
+			throw new Exception("flag Type error");
+		}
+		return "";
+	}
 }
+
+
+
