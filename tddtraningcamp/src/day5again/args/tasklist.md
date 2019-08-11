@@ -12,7 +12,9 @@ args : -g this,is,a,list -d 1,2,-3,5
   - [ ] 在args中不存在返回 默认值
   - [ ] 在args中存在返回对应值
   - [ ] flag 在schema中不存在
-- [ ] argparser  
+  - [ ] argparser  
+    - [ ] 在argument中存在，返回对应值
+    - [ ] 不存在，返回默认值
 - [ ] char*   - String arg.  
 - [ ] char#   - Integer arg. 
 - [ ] char##  - double arg.
@@ -26,3 +28,5 @@ args : -g this,is,a,list -d 1,2,-3,5
    - schema无效字符串
    - 非bool型未指定参数
    - schema不符合规范 :长度小于2
+
+//问题  校验应不应该写在构造方法里
