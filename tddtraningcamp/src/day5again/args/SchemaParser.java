@@ -72,6 +72,7 @@ public class SchemaParser {
 		if (schemaMap.containsKey(flag) && schemaMap.get(flag).equals("##")) {
 			return true;
 		}
+
 		return false;
 	}
 }
