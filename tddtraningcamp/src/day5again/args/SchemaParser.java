@@ -34,8 +34,15 @@ public class SchemaParser {
 			if (schema.length() == 2 && schema.substring(1).equals(STRING_FLAG)) {
 				return;
 			}
-			throw new Exception("schema type error");
 
+			if (schema.length() == 2 && schema.substring(1).equals("#")) {
+				return;
+			}
+
+			if (schema.length() == 3 && schema.substring(1).equals("##")) {
+				return;
+			}
+			throw new Exception("schema type error");
 		}
 	}
 
@@ -49,6 +56,20 @@ public class SchemaParser {
 	public boolean isString(String flag) {
 
 		if(schemaMap.containsKey(flag) && schemaMap.get(flag).equals(STRING_FLAG)){
+			return true;
+		}
+		return false;
+	}
+
+	public boolean isInteger(String flag) {
+		if (schemaMap.containsKey(flag) && schemaMap.get(flag).equals("#")) {
+			return true;
+		}
+		return false;
+	}
+
+	public boolean isDouble(String flag) {
+		if (schemaMap.containsKey(flag) && schemaMap.get(flag).equals("##")) {
 			return true;
 		}
 		return false;

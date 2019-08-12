@@ -1,6 +1,5 @@
 package day5again.args;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -57,5 +56,7 @@ public class ArgsParserTest {
 	void should_not_throw_format_exception_when_argument_is_none() throws Exception {
 		assertDoesNotThrow(() -> new ArgsParser(""));
 	}
+
+
 
 }

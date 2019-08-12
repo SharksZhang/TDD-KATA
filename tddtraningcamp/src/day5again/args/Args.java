@@ -19,7 +19,22 @@ public class Args {
 		if(!schemaParser.isString(flag)){
 			throw new Exception("flag Type error");
 		}
-		return "";
+		return argsParser.getString(flag);
+	}
+
+
+	public int getInteger(String flag) throws Exception {
+		if (!schemaParser.isInteger(flag)) {
+			throw new Exception("flag Type error");
+		}
+		return argsParser.getInteger(flag);
+	}
+
+	public double getDouble(String flag) throws Exception {
+		if (!schemaParser.isDouble(flag)) {
+			throw new Exception("flag type error");
+		}
+		return argsParser.getDouble(flag);
 	}
 }
 

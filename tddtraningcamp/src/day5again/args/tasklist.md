@@ -25,8 +25,8 @@ args : -g this,is,a,list -d 1,2,-3,5
   - [x] schema 判断类型
   - [x] schema判断String类型
 - [ ] char*   - String arg.  
-  - [ ] 在schema中类型正确，在argument 中存在获取对应值,
-  - [ ] 在schema中类型正确，在argument中存在返回默认值
+  - [x] 在schema中类型正确，在argument 中存在获取对应值,
+  - [x] 在schema中类型正确，在argument中存在返回默认值
   - [ ] 在schema中类型错误
 - [ ] char#   - Integer arg. 
 - [ ] char##  - double arg.
@@ -41,4 +41,9 @@ args : -g this,is,a,list -d 1,2,-3,5
    - 非bool型未指定参数
    - schema不符合规范 :长度小于2
 
-//问题  校验应不应该写在构造方法里
+//问题  
+校验应不应该写在构造方法里
+
+####总结
+1. tdd大步小步时取决于对这个问题的理解程度的，同一个粒度，刚接触这个问题的时候可能是一大步，到后面，可能是一小步
+2. 写测试时，想想如何驱动出类和接口。
