@@ -31,4 +31,18 @@ public class ArgsParser {
 		}
 		return "";
 	}
+
+	public int getInt(String flag) {
+		if (map.containsKey(flag)) {
+			return Integer.valueOf(map.get(flag));
+		}
+		return 0;
+	}
+
+	public double getDouble(String flag) {
+		if (map.containsKey(flag)) {
+			return Double.valueOf(map.get(flag));
+		}
+		return 0.0;
+	}
 }

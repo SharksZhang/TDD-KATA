@@ -26,26 +26,18 @@ args : -g this,is,a,list -d 1,2,-3,5
     - [ ] 不以 -开头 不能出现连续的两个 value
 - [ ] schema  
   - [ ] 校验schema格式
+    - [ ] 长度>=0
+    - [ ] 第一个character是字符串
+    - [ ] 后面部分包含在制定类型中
   - [ ] schema 判断类型
-  - [ ] schema判断String类型
 - [ ] char*   - String arg.  
   - [ ] 在schema中类型正确，在argument 中存在获取对应值,
   - [ ] 在schema中类型正确，在argument中存在返回默认值
   - [ ] 在schema中类型错误
 - [ ] char#   - Integer arg. 
-	添加对应类型
-	加入args
 - [ ] char##  - double arg.
 - [ ] char[*] - one element of a string array. 
 
- -  校验 。schema is ""
-   - arguments not in schema
-     - 未准确提示哪个参数无效
-   - get argument not in schema 
-   - get argument type error 
-   - schema无效字符串
-   - 非bool型未指定参数
-   - schema不符合规范 :长度小于2
 
 //问题  
 校验应不应该写在构造方法里
