@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="simpleencryptionalternatingsplit.ExampleTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-10-21T21:08:31" hostname="MacBook-Air.local" time="0.009">
+  <properties/>
+  <testcase name="testEncrypt" classname="simpleencryptionalternatingsplit.ExampleTests" time="0.007"/>
+  <testcase name="testNullOrEmpty" classname="simpleencryptionalternatingsplit.ExampleTests" time="0.0"/>
+  <testcase name="testDecrypt" classname="simpleencryptionalternatingsplit.ExampleTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

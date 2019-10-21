@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="isanumberprime.PrimeTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-10-21T21:08:31" hostname="MacBook-Air.local" time="0.028">
+  <properties/>
+  <testcase name="testNotPrime" classname="isanumberprime.PrimeTest" time="0.003"/>
+  <testcase name="testBasic" classname="isanumberprime.PrimeTest" time="0.0"/>
+  <testcase name="testPrime" classname="isanumberprime.PrimeTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

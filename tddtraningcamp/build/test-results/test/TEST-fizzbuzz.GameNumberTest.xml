@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="fizzbuzz.GameNumberTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-10-21T21:18:40" hostname="MacBook-Air.local" time="0.021">
+  <properties/>
+  <testcase name="should_return_fizz_or_buzz_if_number_is_contains_by_3_or_5" classname="fizzbuzz.GameNumberTest" time="0.017"/>
+  <testcase name="should_return_fizz_buzz_if_number_is_divisible_by_3_and_5" classname="fizzbuzz.GameNumberTest" time="0.0"/>
+  <testcase name="should_return_buzz_if_number_is_divisible_by_5" classname="fizzbuzz.GameNumberTest" time="0.001"/>
+  <testcase name="should_return_fizz_if_number_is_divisible_by_3" classname="fizzbuzz.GameNumberTest" time="0.0"/>
+  <testcase name="should_return_raw_number_for_normal_number" classname="fizzbuzz.GameNumberTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
