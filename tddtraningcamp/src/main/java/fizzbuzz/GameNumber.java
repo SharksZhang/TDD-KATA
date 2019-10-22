@@ -16,7 +16,7 @@ public class GameNumber {
 		if (isRelatedTo(5)) {
 			result += "buzz";
 		}
-		return result == "" ? String.valueOf(number) : result;
+		return result.isEmpty() ? String.valueOf(number) : result;
 	}
 
 	private boolean isRelatedTo(int i) {
