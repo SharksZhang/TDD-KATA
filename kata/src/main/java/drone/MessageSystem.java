@@ -18,11 +18,11 @@ public class MessageSystem {
 
 	public static final String SEPERATOR = " ";
 
-	final ArrayList<Position> positions = new ArrayList<>();
+	private final ArrayList<Position> legalPositions = new ArrayList<>();
 
 	private String planeID;
 
-	private int messagesLines;
+	private int messagesLinesLength;
 
 	/**
 	 *
@@ -30,20 +30,20 @@ public class MessageSystem {
 	 * @return
 	 */
 	public String getMessage(int index) {
-		if (index >= messagesLines) {
+		if (index >= messagesLinesLength) {
 			return CANNOT_FIND + index;
 		}
-		if (index < messagesLines && index >= positions.size()) {
+		if (index < messagesLinesLength && index >= legalPositions.size()) {
 			return ERROR_STR + index;
 		}
-		return planeID + SEPERATOR + index + SEPERATOR + positions.get(index);
+		return planeID + SEPERATOR + index + SEPERATOR + legalPositions.get(index);
 
 	}
 
 
 	public MessageSystem(String path) {
 		ArrayList<String> messages = readFile(path);
-		messagesLines = messages.size();
+		messagesLinesLength = messages.size();
 		if (messages.size() == 0) {
 			return;
 		}
@@ -53,7 +53,7 @@ public class MessageSystem {
 
 	private void initPositions(ArrayList<String> messages) {
 		if (isFirstLineFormat(messages.get(0))) {
-			positions.add(new Position(messages.get(0)));
+			legalPositions.add(new Position(messages.get(0)));
 		} else {
 			return;
 		}
@@ -68,11 +68,11 @@ public class MessageSystem {
 			}
 
 			Position position = new Position(messages.get(i));
-			if (!position.hasPrevious(positions.get(i - 1))) {
+			if (!position.hasPrevious(legalPositions.get(i - 1))) {
 				return;
 			}
 
-			positions.add(position);
+			legalPositions.add(position);
 		}
 	}
 

@@ -13,18 +13,9 @@ public class GameNumberTest {
 	}
 
 	@Test
-	public void should_return_fizz_if_number_is_divisible_by_3 () {
+	public void should_return_fizz_or_buzz_if_number_is_divisible_by_3_or_5 () {
 		checkNumberOutput(3, "fizz");
-
-	}
-	
-	@Test
-	public void should_return_buzz_if_number_is_divisible_by_5 () {
 		checkNumberOutput(5, "buzz");
-	}
-
-	@Test
-	public void should_return_fizzbuzz_if_number_is_divisible_by_3_and_5 () {
 		checkNumberOutput(15, "fizzbuzz");
 	}
 
@@ -33,10 +24,10 @@ public class GameNumberTest {
 		checkNumberOutput(13, "fizz");
 		checkNumberOutput(52, "buzz");
 		checkNumberOutput(53, "fizzbuzz");
-		checkNumberOutput(54, "fizzbuzz1");
+		checkNumberOutput(54, "fizzbuzz");
 	}
 
-	private void checkNumberOutput(int i, String fizz) {
-		assertThat(new GameNumber(i).toString(), is(fizz));
+	private void checkNumberOutput(int i, String s) {
+		assertThat(new GameNumber(i).toString(), is(s));
 	}
 }

@@ -1,5 +1,7 @@
 package fizzbuzz;
 
+import static java.lang.String.*;
+
 public class GameNumber {
 	private int number;
 
@@ -9,17 +11,18 @@ public class GameNumber {
 
 	@Override
 	public String toString() {
-		String result = "";
+		String res = "";
 		if (isRelatedTo(3)) {
-			result += "fizz";
+			res +=  "fizz";
 		}
 		if (isRelatedTo(5)) {
-			result += "buzz";
+			res +=  "buzz";
 		}
-		return result.isEmpty() ? String.valueOf(number) : result;
+
+		return res.isEmpty() ? valueOf(number) : res;
 	}
 
 	private boolean isRelatedTo(int i) {
-		return number % i == 0 || String.valueOf(number).contains(String.valueOf(i));
+		return number % i == 0 || valueOf(number).contains(valueOf(i));
 	}
 }
